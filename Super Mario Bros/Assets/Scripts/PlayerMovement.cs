@@ -21,11 +21,14 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        velocity.y = Mathf.Max(velocity.y, 0f);
         HorizontalMovement();
         grounded = rigidbody.Raycast(Vector2.down);
         if (grounded) {
             GroundedMovement();
         }
+
+        ApplyGravity();
     }
     private void HorizontalMovement()
     {
@@ -37,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 position = rigidbody.position;
         Vector2 leftEdge = camera.ScreenToWorldPoint(Vector2.zero);
         Vector2 rightEdge = camera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        position.x = Mathf.Clamp(position.x, leftEdge.x + 0.5f, rightEdge.x - 0.5f);
+        position.x = Mathf.Clamp(position.x, leftEdge.x + 0.5f, rightEdge.x - 0.5f );
         position += velocity * Time.fixedDeltaTime;
         rigidbody.MovePosition(position);
     }
@@ -50,5 +53,13 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = jumpForce;
             jumping = true;
         }
+    }
+
+    private void ApplyGravity()
+    {
+        bool falling = velocity.y < 0f || !Input.GetButton("Jump");
+        float multiplier = falling ? 3f : 1f;
+        velocity.y += gravity * multiplier * Time.deltaTime;
+        velocity.y = Mathf.Max(velocity.y, gravity / 2f);
     }
 }
