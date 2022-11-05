@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxJumpHeihgt = 5f;
     public float maxJumpTime = 2f;
     public float jumpForce => (2f * maxJumpHeihgt) / (maxJumpTime / 2f);
-    public float gravity => (-2.45f * maxJumpHeihgt) / Mathf.Pow((maxJumpTime / 2f), 2);
+    public float gravity => (-2.4f * maxJumpHeihgt) / Mathf.Pow((maxJumpTime / 2f), 2);
     public bool grounded {get; private set; }
     public bool jumping {get; private set; }
 
