@@ -10,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public bool grounded {get; private set; }
     public bool jumping {get; private set; }
 
+    private new Camera camera;
     private new Rigidbody2D rigidbody;
     private float inputAxis;
     private Vector2 velocity;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        camera = Camera.main;
     }
     private void Update()
     {
@@ -33,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 position = rigidbody.position;
+        Vector2 leftEdge = camera.ScreenToWorldPoint(Vector2.zero);
+        Vector2 rightEdge = camera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        position.x = Mathf.Clamp(position.x, leftEdge.x + 0.5f, rightEdge.x - 0.5f);
         position += velocity * Time.fixedDeltaTime;
         rigidbody.MovePosition(position);
     }
