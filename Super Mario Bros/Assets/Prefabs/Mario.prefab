@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3564538853335625358}
   - component: {fileID: 4547867735439395215}
   - component: {fileID: 1684950887703898139}
-  - component: {fileID: 8195219628816017745}
-  m_Layer: 0
+  - component: {fileID: 7918501090380453421}
+  m_Layer: 3
   m_Name: Mario
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &8195219628816017745
+--- !u!114 &7918501090380453421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,9 +82,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4795771232093860498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35d170e05fac1d24292e0dc99832240c, type: 3}
+  m_Script: {fileID: 11500000, guid: 399ddd17e2f779e4dafbcb83f5387f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 8
+  maxJumpHeihgt: 5
+  maxJumpTime: 1
 --- !u!1 &5318864795377129058
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6062499862970155552}
   - component: {fileID: 8435383047389258550}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7251644806593050936}
   - component: {fileID: 1558854101048740439}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
