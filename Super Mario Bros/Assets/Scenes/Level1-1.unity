@@ -2668,6 +2668,14 @@ PrefabInstance:
       propertyPath: slide
       value: 
       objectReference: {fileID: 21300000, guid: bfb02f37424e1504cb18192b8e445d43, type: 3}
+    - target: {fileID: 7918501090380453421, guid: f57d03e69598ace41b4ff9e4d7b1510f, type: 3}
+      propertyPath: maxJumpTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918501090380453421, guid: f57d03e69598ace41b4ff9e4d7b1510f, type: 3}
+      propertyPath: maxJumpHeihgt
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f57d03e69598ace41b4ff9e4d7b1510f, type: 3}
 --- !u!1001 &732865425
