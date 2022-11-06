@@ -16,11 +16,13 @@ public class PlayerMovement : MonoBehaviour
     private new Rigidbody2D rigidbody;
     private float inputAxis;
     private Vector2 velocity;
+
     private void Awake()
     {
         camera = Camera.main;
         rigidbody = GetComponent<Rigidbody2D>();
     }
+    
     private void Update()
     {
         HorizontalMovement();
