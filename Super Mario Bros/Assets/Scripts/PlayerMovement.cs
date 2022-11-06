@@ -7,8 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public float maxJumpTime = 2f;
     public float jumpForce => (2f * maxJumpHeihgt) / (maxJumpTime / 2f);
     public float gravity => (-2f * maxJumpHeihgt) / Mathf.Pow((maxJumpTime / 2f), 2);
-    public bool grounded {get; private set; }
-    public bool jumping {get; private set; }
+     public bool grounded {get; private set; } //Переменная "На земле"
+    public bool jumping {get; private set; } //Переменная "Прыжок"
+    public bool running => (Mathf.Abs(velocity.x) > 0.25f) || (Mathf.Abs(inputAxis) > 0.25f); //Переменная "Бег"
+    public bool sliding => (velocity.x > 0f && inputAxis < 0f) || (velocity.x < 0f && inputAxis > 0f); //Переменная "Скольжение"
 
     private new Camera camera;
     private new Rigidbody2D rigidbody;
@@ -44,11 +46,15 @@ public class PlayerMovement : MonoBehaviour
     private void HorizontalMovement()
     {
         inputAxis = Input.GetAxis("Horizontal");
-        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime * 3);
-
+        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime * 2);
         if(rigidbody.Raycast(Vector2.right * velocity.x))
         {
             velocity.x = 0f;
+        }
+        if (velocity.x > 0f) { //Поворот
+            transform.eulerAngles = Vector3.zero;
+        } else if (velocity.x < 0) {
+            transform.eulerAngles = new Vector3 (0f, 180f, 0f);
         }
     }
 
