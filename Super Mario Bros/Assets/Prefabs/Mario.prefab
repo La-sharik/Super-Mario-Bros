@@ -52,10 +52,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Material: {fileID: 6200000, guid: 8a19bc4d3bf9f4fd0b5d17dce99cf77f, type: 2}
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &1684950887703898139
 CapsuleCollider2D:
@@ -66,7 +66,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 4795771232093860498}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8a19bc4d3bf9f4fd0b5d17dce99cf77f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -185,6 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63fae22a9dd4674ca1296efe3369633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idle: {fileID: 0}
+  jump: {fileID: 0}
+  slide: {fileID: 0}
+  run: {fileID: 0}
 --- !u!1 &6950578770430937120
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,3 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63fae22a9dd4674ca1296efe3369633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idle: {fileID: 0}
+  jump: {fileID: 0}
+  slide: {fileID: 0}
+  run: {fileID: 0}
