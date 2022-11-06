@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 8f;
+    public float moveSpeed = 7f;
     public float maxJumpHeihgt = 5f;
     public float maxJumpTime = 2f;
     public float jumpForce => (2f * maxJumpHeihgt) / (maxJumpTime / 2f);
