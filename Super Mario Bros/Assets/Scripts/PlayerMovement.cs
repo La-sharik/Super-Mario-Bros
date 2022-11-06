@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 7f;
+    public float moveSpeed = 8f;
     public float maxJumpHeihgt = 5f;
     public float maxJumpTime = 2f;
     public float jumpForce => (2f * maxJumpHeihgt) / (maxJumpTime / 2f);
-    public float gravity => (-2.35f * maxJumpHeihgt) / Mathf.Pow((maxJumpTime / 2f), 2);
+    public float gravity => (-2f * maxJumpHeihgt) / Mathf.Pow((maxJumpTime / 2f), 2);
     public bool grounded {get; private set; }
     public bool jumping {get; private set; }
 
@@ -45,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
     {
         inputAxis = Input.GetAxis("Horizontal");
         velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime * 3);
+
+        if(rigidbody.Raycast(Vector2.right * velocity.x))
+        {
+            velocity.x = 0f;
+        }
     }
 
     private void GroundedMovement()
@@ -64,5 +69,14 @@ public class PlayerMovement : MonoBehaviour
         float multiplier = falling ? 3f : 1f;
         velocity.y += gravity * multiplier * Time.deltaTime;
         velocity.y = Mathf.Max(velocity.y, gravity / 2f);
+    }
+
+//  сталкновение с блоком сверху если столкнулись сверху с блоком то скорость по Oy обнуляем, чтобы сразу начал падать
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer != LayerMask.NameToLayer("PowerUp") && transform.DotTest(collision.transform, Vector2.up))
+        {
+            velocity.y = 0f;
+        }
     }
 }
