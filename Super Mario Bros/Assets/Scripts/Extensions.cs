@@ -19,7 +19,7 @@ public static class Extensions
     public static bool DotTest(this Transform transform, Transform other, Vector2 testDirectional)
     {
         Vector2 direction = other.position - transform.position;
-        return Vector2.Dot(direction.normalized, testDirectional) > 0.2f; 
+        return Vector2.Dot(direction.normalized, testDirectional) > 0.4f; 
         //normalized нужен чтобы вектор сделать от 0 до 1 
     }
 }
