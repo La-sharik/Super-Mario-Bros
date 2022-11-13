@@ -24,9 +24,7 @@ public class DeathAnimation : MonoBehaviour
     {
         spriteRenderer.enabled = true; //Включение анимации
         spriteRenderer.sortingOrder = 10; //Вынос игрока поверх всего
-        if (deadSprite != null) {
-            spriteRenderer.sprite = deadSprite;
-        }
+        spriteRenderer.sprite = deadSprite;
     }
 
     private void DisablePhysics()
@@ -52,12 +50,13 @@ public class DeathAnimation : MonoBehaviour
         float duration = 3f;
         float jumpVelocity = 10f;
         float gravity = -40f;
-
+        
         Vector3 velocity = Vector3.up * jumpVelocity;
         while (elapsed < duration) {
             transform.position += velocity * Time.deltaTime;
             velocity.y += gravity * Time.deltaTime;
             elapsed += Time.deltaTime;
+            UpdateSprite();
             yield return null; //Возврат каждого кадра
         }
     }
