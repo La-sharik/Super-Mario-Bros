@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DeathAnimation : MonoBehaviour
 {
-    public Sprite deathSprite;
     public SpriteRenderer spriteRenderer;
+    public Sprite deadSprite;
 
     private void Reset()
     {
@@ -23,9 +23,9 @@ public class DeathAnimation : MonoBehaviour
     private void UpdateSprite()
     {
         spriteRenderer.enabled = true; //Включение анимации
-        spriteRenderer.sortingOrder = 9; //Вынос игрока поверх всего
-        if (deathSprite != null) {
-            spriteRenderer.sprite = deathSprite;
+        spriteRenderer.sortingOrder = 10; //Вынос игрока поверх всего
+        if (deadSprite != null) {
+            spriteRenderer.sprite = deadSprite;
         }
     }
 
@@ -40,10 +40,10 @@ public class DeathAnimation : MonoBehaviour
         if (playerMovement != null) {
             playerMovement.enabled = false;
         }
-        /*EntityMovement entityMovement = GetComponent<EntityMovement>(); //Отключение скрипта врага
+        EntityMovement entityMovement = GetComponent<EntityMovement>(); //Отключение скрипта врага
         if (entityMovement != null) {
             entityMovement.enabled = false;
-        }*/
+        }
     }
 
     private IEnumerator Animate()

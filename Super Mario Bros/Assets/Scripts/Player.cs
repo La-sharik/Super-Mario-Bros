@@ -6,10 +6,12 @@ public class Player : MonoBehaviour
 {
     public PlayerSpriteRenderer smallRenderer;
     public PlayerSpriteRenderer bigRenderer;
-    public DeathAnimation deathAnimation;
+
+    public DeathAnimation deathAnimation { get; private set; }
+    
     public bool small => smallRenderer.enabled;
     public bool big => bigRenderer.enabled;
-    public bool dead => deathAnimation.enabled;
+    private bool dead => deathAnimation.enabled;
     
     public void Awake()
     {
@@ -20,7 +22,8 @@ public class Player : MonoBehaviour
     {
         if (big) {
             Shrink();
-        } else {
+        } 
+        if (small) {
             Death();
         }
     }
