@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class EntityMovement : MonoBehaviour
 {
     public float speed = 1f;
     public Vector2 direction = Vector2.left;//так как все враги начинают двигаться влево
-    public float gravity = 9.81f;
+    public float gravity = -9.81f;
 
     private new Rigidbody2D rigidbody;
     private Vector2 velocity;
