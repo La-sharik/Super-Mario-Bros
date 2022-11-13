@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     {
         smallRenderer.enabled = false; //Отключение рендеринга
         bigRenderer.enabled = false; //Отключение рендеринга
-        deathAnimation = true; //Включение анимации смерти
-        GameManager.Instance.Resetlevel(3f); //Перезагрузка уровня через 3 секунды
+        deathAnimation.enabled = true; //Включение анимации смерти
+        //GameManager.Instance.Resetlevel(3f); //Перезагрузка уровня через 3 секунды
     }
 }
