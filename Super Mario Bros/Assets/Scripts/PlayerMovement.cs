@@ -55,8 +55,14 @@ public class PlayerMovement : MonoBehaviour
         }
         if (velocity.x > 0f) { //Поворот
             transform.eulerAngles = Vector3.zero;
-        } else if (velocity.x < 0) {
+        } else if (velocity.x < 0f) {
             transform.eulerAngles = new Vector3 (0f, 180f, 0f);
+        } else if (velocity.x == 0f) {
+            if (inputAxis > 0f) {
+                transform.eulerAngles = Vector3.zero;
+            } else if (inputAxis < 0f) {
+                transform.eulerAngles = new Vector3 (0f, 180f, 0f);
+            }
         }
     }
 
