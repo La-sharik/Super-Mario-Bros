@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             if(transform.DotTest(collision.transform, Vector2.down)){
-                velocity.y = jumpForce / 1.5;
+                velocity.y = jumpForce / 1.5f;
                 jumping = true; 
             }
         }
