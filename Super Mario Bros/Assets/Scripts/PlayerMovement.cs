@@ -88,9 +88,17 @@ public class PlayerMovement : MonoBehaviour
 //  сталкновение с блоком сверху если столкнулись сверху с блоком то скорость по Oy обнуляем, чтобы сразу начал падать
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer != LayerMask.NameToLayer("PowerUp") && transform.DotTest(collision.transform, Vector2.up))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            velocity.y = 0f;
+            if(transform.DotTest(collision.transform, Vector2.down)){
+                velocity.y = jumpForce / 1.5;
+                jumping = true; 
+            }
+        }
+        else if(collision.gameObject.layer != LayerMask.NameToLayer("PowerUp"))
+        {
+            if(transform.DotTest(collision.transform, Vector2.up))
+                velocity.y = 0f;
         }
     }
 }
