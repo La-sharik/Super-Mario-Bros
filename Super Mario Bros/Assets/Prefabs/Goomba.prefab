@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4694680473186079005}
   - component: {fileID: -598462360567971196}
   - component: {fileID: 614895524737228853}
+  - component: {fileID: -1584911513896109839}
   m_Layer: 7
   m_Name: Goomba
   m_TagString: Untagged
@@ -73,7 +74,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &3209862899963479307
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,3 +171,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flatSprite: {fileID: 21300000, guid: dceda839fbcc74441aef5f93f32bdc1a, type: 3}
+--- !u!114 &-1584911513896109839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221614544609459196}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05b192760227a44d826218128955102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4694680473186079005}
+  deadSprite: {fileID: 21300000, guid: 56edcd414648ccd46810c8fb8d71f38f, type: 3}
