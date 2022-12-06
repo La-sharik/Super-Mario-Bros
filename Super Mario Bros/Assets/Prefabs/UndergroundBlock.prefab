@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6909807642827942457}
   - component: {fileID: 4491004527593796806}
   - component: {fileID: 3815212246290937815}
+  - component: {fileID: 3591381413292690818}
   m_Layer: 0
   m_Name: UndergroundBlock
   m_TagString: Untagged
@@ -111,3 +112,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3591381413292690818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419874801601965945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee331c7e8e41f4261a7365c992d24be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHits: -1
+  emptyBlock: {fileID: 21300000, guid: 0c057401fbf74454fa3032deae7f0a61, type: 3}

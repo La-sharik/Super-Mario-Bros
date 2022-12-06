@@ -1206,6 +1206,14 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8812784515033827839, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8812784515033827839, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
 --- !u!4 &287526646 stripped
