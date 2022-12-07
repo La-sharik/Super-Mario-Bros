@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1651625873088563465}
   - component: {fileID: 8799085558728363759}
   - component: {fileID: 3068339216353937105}
+  - component: {fileID: -1301038966701098124}
   m_Layer: 0
   m_Name: 1upMarshrooms
   m_TagString: Untagged
@@ -179,3 +180,16 @@ MonoBehaviour:
   speed: 3
   direction: {x: 1, y: 0}
   gravity: -9.81
+--- !u!114 &-1301038966701098124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9065983012434093870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef11b263452e044dea02fe971d7eac58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1

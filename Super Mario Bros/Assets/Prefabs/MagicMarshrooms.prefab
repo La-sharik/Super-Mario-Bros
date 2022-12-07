@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8703894924166905574}
   - component: {fileID: -8167435249218969109}
   - component: {fileID: -1199565586214680051}
+  - component: {fileID: -5250065103436817162}
   m_Layer: 0
   m_Name: MagicMarshrooms
   m_TagString: Untagged
@@ -179,3 +180,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b1f0e5ec1cf47df82cd93836845004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5250065103436817162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8566968586267940927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef11b263452e044dea02fe971d7eac58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
