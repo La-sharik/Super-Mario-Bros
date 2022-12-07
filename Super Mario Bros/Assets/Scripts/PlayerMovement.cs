@@ -7,10 +7,11 @@ public class PlayerMovement : MonoBehaviour
     public float maxJumpTime = 2f;
     public float jumpForce => (2f * maxJumpHeihgt) / (maxJumpTime / 2f);
     public float gravity => (-2f * maxJumpHeihgt) / Mathf.Pow((maxJumpTime / 2f), 2);
-     public bool grounded {get; private set; } //Переменная "На земле"
+    public bool grounded {get; private set; } //Переменная "На земле"
     public bool jumping {get; private set; } //Переменная "Прыжок"
     public bool running => (Mathf.Abs(velocity.x) > 0.25f) || (Mathf.Abs(inputAxis) > 0.25f); //Переменная "Бег"
     public bool sliding => (velocity.x > 0f && inputAxis < 0f) || (velocity.x < 0f && inputAxis > 0f); //Переменная "Скольжение"
+    public new Collider2D collider;
 
     private new Camera camera;
     private new Rigidbody2D rigidbody;
@@ -21,6 +22,23 @@ public class PlayerMovement : MonoBehaviour
     {
         camera = Camera.main;
         rigidbody = GetComponent<Rigidbody2D>();
+        collider = GetComponent<Collider2D>();
+    }
+
+    public void OnEnable()
+    {
+        rigidbody.isKinematic = false;
+        collider.enabled = true;
+        velocity = Vector2.zero;
+        jumping = false; 
+    }
+
+    public void OnDisable()
+    {
+        rigidbody.isKinematic = true;
+        collider.enabled = false;
+        velocity = Vector2.zero;
+        jumping = false; 
     }
     
     private void Update()
