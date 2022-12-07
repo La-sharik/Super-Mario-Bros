@@ -31,7 +31,7 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.Mushrooms:
-                //TODO
+                player.GetComponent<Player>().Grow();
                 break;
 
             case Type.Starpower:

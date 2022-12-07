@@ -1,12 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public PlayerSpriteRenderer smallRenderer;
     public PlayerSpriteRenderer bigRenderer;
+    private PlayerSpriteRenderer activeRenderer;
+
     public DeathAnimation deathAnimation { get; private set; }
+    private CapsuleCollider2D capsuleCollider;
     public bool small => smallRenderer.enabled;
     public bool big => bigRenderer.enabled;
     
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
     public void Awake()
     {
         deathAnimation = GetComponent<DeathAnimation>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     public void Hit()
@@ -27,16 +30,57 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Shrink() //Уменьшение размера
-    {
-        // In progress
-    }
-
     public void Death()
     {
         smallRenderer.enabled = false; //Отключение рендеринга
         bigRenderer.enabled = false; //Отключение рендеринга
         deathAnimation.enabled = true; //Включение анимации смерти
         GameManager.Instance.ResetLevel(3f); //Перезагрузка уровня через 3 секунды
+    }
+
+    public void Grow() //Увеличение размера
+    {
+        smallRenderer.enabled = false;
+        bigRenderer.enabled = true;
+        activeRenderer = bigRenderer;
+
+        capsuleCollider.size = new Vector2(1f, 2f);
+        capsuleCollider.offset = new Vector2(0f, 0.5f);
+
+        StartCoroutine(ScaleAnimation());
+    }
+
+    private void Shrink() //Уменьшение размера
+    {
+        smallRenderer.enabled = true;
+        bigRenderer.enabled = false;
+        activeRenderer = smallRenderer;
+
+        capsuleCollider.size = new Vector2(1f, 1f);
+        capsuleCollider.offset = new Vector2(0f, 0f);
+
+        StartCoroutine(ScaleAnimation());
+    }
+
+    private IEnumerator ScaleAnimation()
+    {
+        float elapsed = 0f;
+        float duration = 0.5f;
+
+        while(elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            if(Time.frameCount % 4 == 0)
+            {
+                smallRenderer.enabled = !smallRenderer.enabled;
+                bigRenderer.enabled = !bigRenderer.enabled;
+            }
+
+            yield return null;
+        }
+
+        smallRenderer.enabled = false;
+        bigRenderer.enabled = false;
+        activeRenderer.enabled = true;
     }
 }
