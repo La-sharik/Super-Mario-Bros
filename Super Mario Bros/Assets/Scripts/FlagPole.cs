@@ -8,8 +8,6 @@ public class FlagPole : MonoBehaviour
     public Transform poleBottom;
     public Transform castle;
     public float speed = 3f;
-    public int nextWorld = 1;
-    public int nexStage = 2;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,7 +28,7 @@ public class FlagPole : MonoBehaviour
         yield return MoveTo(player, castle.position); //Перемещение к замку
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(2f);
-        GameManager.Instance.LoadLevel(nextWorld, nexStage);
+        GameManager.Instance.NextLevel();
     }
 
     private IEnumerator MoveTo(Transform subject, Vector3 destinaton)

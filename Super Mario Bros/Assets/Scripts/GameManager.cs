@@ -37,15 +37,20 @@ public class GameManager : MonoBehaviour
     {
         lives = 3;
 
-        LoadLevel(1, 1);
+        loadLevel(1, 1);
     }
 
-    public void LoadLevel(int world, int stage)
+    private void loadLevel(int world, int stage)
     {
         this.world = world;
         this.stage = stage;
 
         SceneManager.LoadScene($"{world}-{stage}");
+    }
+
+    public void NextLevel()
+    {
+        loadLevel(world, stage + 1);
     }
 
     public void ResetLevel(float delay)
@@ -58,7 +63,7 @@ public class GameManager : MonoBehaviour
         lives--;
 
         if (lives > 0) {
-            LoadLevel(world, stage);
+            loadLevel(world, stage);
         } else {
             GameOver();
         }
