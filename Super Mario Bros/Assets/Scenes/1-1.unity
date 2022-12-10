@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -316,6 +320,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 9065983012434093870, guid: 379e7032a75e042938f0980a1fb7bca3, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -362,6 +370,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 761014071688668897, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680739114748670106, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849533258514117630, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -774,6 +790,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -1206,6 +1226,14 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8812784515033827839, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8812784515033827839, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
 --- !u!4 &287526646 stripped
@@ -1220,6 +1248,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -1362,6 +1394,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -3303,6 +3339,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -5000,6 +5040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 8566968586267940927, guid: d48929a438980401893201f9b13a1775, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -5434,6 +5478,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -5602,6 +5650,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -6099,6 +6151,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -6869,6 +6925,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -7625,6 +7685,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 673395388}
     m_Modifications:
+    - target: {fileID: -5272392467670402475, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
+    - target: {fileID: -5272392467670402475, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
+      propertyPath: maxHits
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3972663342822287711, guid: 098068335848ad1489e89f769aea7fa3, type: 3}
       propertyPath: m_Name
       value: Brick
@@ -7885,6 +7953,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock
@@ -8355,6 +8427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649602295}
     m_Modifications:
+    - target: {fileID: -1725413348808438840, guid: a31da51cce8e0b54894746f621409753, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3850223074743967947, guid: aad24d70c6d9f46978506e94be65e675, type: 3}
     - target: {fileID: 602034314162944585, guid: a31da51cce8e0b54894746f621409753, type: 3}
       propertyPath: m_Name
       value: MysteryBlock

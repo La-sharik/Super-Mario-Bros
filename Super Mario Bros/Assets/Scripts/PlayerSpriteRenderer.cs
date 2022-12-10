@@ -9,7 +9,7 @@ public class PlayerSpriteRenderer : MonoBehaviour
     public Sprite slide;
     public AnimatedSprite run; //Объект анимироанного спрайта
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer { get; private set;}
     private PlayerMovement movement;
 
     private void OnEnable() //Обработка спрайта
