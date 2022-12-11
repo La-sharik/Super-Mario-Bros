@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         lives--;
-
         if (lives > 0) {
             loadLevel(world, stage);
         } else {
@@ -82,7 +81,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        //SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("Game Over");
         Invoke(nameof(NewGame), 10f);
     }
 
