@@ -39,6 +39,7 @@ public class Koopa : MonoBehaviour
                 Player player = other.GetComponent<Player>();
 
                 if(player.starpower){
+                     GameManager.Instance.AddKoopa();
                     Hit();
                 } else  {
                     player.Hit();
@@ -52,6 +53,7 @@ public class Koopa : MonoBehaviour
     }
     private void EnterShell()
     {
+        GameManager.Instance.AddKoopa();
         shelled = true;
 
         GetComponent<SpriteRenderer>().sprite = shellSprite;

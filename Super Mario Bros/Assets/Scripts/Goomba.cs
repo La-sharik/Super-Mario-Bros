@@ -11,6 +11,7 @@ public class Goomba : MonoBehaviour
             Player player = collision.gameObject.GetComponent<Player>();
 
             if(player.starpower){
+                GameManager.Instance.AddGoomba();
                 Hit();
             } else if(collision.transform.DotTest(transform, Vector2.down)){
                 Flatten();
@@ -30,6 +31,7 @@ public class Goomba : MonoBehaviour
 
     private void Flatten()
     {
+        GameManager.Instance.AddGoomba();
         GetComponent<Collider2D>().enabled = false;
         GetComponent<EntityMovement>().enabled = false;
         GetComponent<AnimatedSprite>().enabled = false;

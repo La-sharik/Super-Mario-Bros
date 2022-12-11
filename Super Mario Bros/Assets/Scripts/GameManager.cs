@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +12,10 @@ public class GameManager : MonoBehaviour
     public int stage { get; private set; }
     public int lives { get; private set; }
     public int coins { get; private set; }
+    public int stars { get; private set; }
+    public int goomba { get; private set; }
+    public int koopa { get; private set; }
+    public int mushrooms { get; private set; }
 
     private void Awake()
     {
@@ -40,6 +45,8 @@ public class GameManager : MonoBehaviour
     {
         lives = 3;
         coins = 0;
+        stars = 0;
+        mushrooms = 0;
 
         loadLevel(1, 1);
     }
@@ -91,5 +98,25 @@ public class GameManager : MonoBehaviour
     public void AddLives()
     {
         lives++;
+    }
+        
+    public void AddMushroom()
+    {
+        mushrooms++;
+    }
+
+    public void AddStar()
+    {
+        stars++;
+    }
+
+    public void AddGoomba()
+    {
+        goomba++;
+    }
+
+    public void AddKoopa()
+    {
+        koopa++;
     }
 }

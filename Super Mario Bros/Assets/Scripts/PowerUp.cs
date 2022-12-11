@@ -31,10 +31,12 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.Mushrooms:
+                GameManager.Instance.AddMushroom();
                 player.GetComponent<Player>().Grow();
                 break;
 
             case Type.Starpower:
+                GameManager.Instance.AddStar();
                 player.GetComponent<Player>().Starpower();
                 break;
         }
