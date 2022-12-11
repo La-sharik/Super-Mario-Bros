@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private new Camera camera;
     private new Rigidbody2D rigidbody;
     private float inputAxis;
+    private float jumpAxis;
     private Vector2 velocity;
 
     private void Awake()
@@ -65,7 +66,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void HorizontalMovement()
     {
-        inputAxis = Input.GetAxis("Horizontal");
+        if (this.name == "Mario"){ 
+            if (Input.GetKeyDown(KeyCode.D)){
+                inputAxis = 1;
+            }
+            if (Input.GetKeyDown(KeyCode.A)){
+                inputAxis = -1;
+            }
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)){
+                inputAxis = 0;
+            }
+        }
+        if (this.name == "Luigi"){ 
+            if (Input.GetKeyDown(KeyCode.RightArrow)){
+                inputAxis = 1;
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow)){
+                inputAxis = -1;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)){
+                inputAxis = 0;
+            }
+        }
         velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime * 2);
         if(rigidbody.Raycast(Vector2.right * velocity.x))
         {
@@ -86,10 +108,27 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundedMovement()
     {
+        if (this.name == "Mario"){ 
+            if (Input.GetKeyDown(KeyCode.W)){
+                jumpAxis = 1;
+            }
+            if (Input.GetKeyUp(KeyCode.W)){
+                jumpAxis = 0;
+            }
+        }
+        if (this.name == "Luigi"){ 
+            if (Input.GetKeyDown(KeyCode.UpArrow)){
+                jumpAxis = 1;
+            }
+            if (Input.GetKeyUp(KeyCode.UpArrow)){
+                jumpAxis = 0;
+            }
+        }
+
         velocity.y = Mathf.Max(velocity.y, 0f);
         jumping = velocity.y > 0f;
 
-        if (Input.GetButtonDown("Jump")) {
+        if (jumpAxis == 1) {
             velocity.y = jumpForce;
             jumping = true;
         }
@@ -97,7 +136,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void ApplyGravity()
     {
-        bool falling = velocity.y < 0f || !Input.GetButton("Jump");
+        if (this.name == "Mario"){ 
+            if (Input.GetKeyDown(KeyCode.W)){
+                jumpAxis = 1;
+            }
+            if (Input.GetKeyUp(KeyCode.W)){
+                jumpAxis = 0;
+            }
+        }
+        if (this.name == "Luigi"){ 
+            if (Input.GetKeyDown(KeyCode.UpArrow)){
+                jumpAxis = 1;
+            }
+            if (Input.GetKeyUp(KeyCode.UpArrow)){
+                jumpAxis = 0;
+            }
+        }
+        bool falling = velocity.y < 0f || jumpAxis != 1;
         float multiplier = falling ? 3f : 1f;
         velocity.y += gravity * multiplier * Time.deltaTime;
         velocity.y = Mathf.Max(velocity.y, gravity / 2f);
