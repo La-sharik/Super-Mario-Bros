@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LiveCounter : MonoBehaviour
 {
-    public int liveCounterStart = GameManager.Instance.lives;
+    public int liveCounterStart = 3;
     public Text liveCounterText;
     // Start is called before the first frame update
     void Start()
