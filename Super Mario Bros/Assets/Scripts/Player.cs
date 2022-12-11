@@ -25,12 +25,12 @@ public class Player : MonoBehaviour
     public void Hit()
     {
         if(!dead && !starpower){
-            if (big) {
-                Shrink();
-            } 
             if (small) {
                 Death();
             }
+            if (big) {
+                Shrink();
+            } 
         }
     }
 
