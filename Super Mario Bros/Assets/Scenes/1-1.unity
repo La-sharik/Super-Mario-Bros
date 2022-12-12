@@ -1907,6 +1907,7 @@ GameObject:
   - component: {fileID: 477799019}
   - component: {fileID: 477799021}
   - component: {fileID: 477799020}
+  - component: {fileID: 477799022}
   m_Layer: 0
   m_Name: TimeCounter
   m_TagString: Untagged
@@ -1976,6 +1977,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477799018}
   m_CullTransparentMesh: 1
+--- !u!114 &477799022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477799018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a18b26713f5434086f875c69fbc08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStart: 400
+  timerText: {fileID: 477799020}
 --- !u!1001 &481773484
 PrefabInstance:
   m_ObjectHideFlags: 0

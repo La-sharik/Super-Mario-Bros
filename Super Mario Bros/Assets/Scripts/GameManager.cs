@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         stars = 0;
         mushrooms = 0;
 
-        loadLevel(1, 1);
+        loadLevel(1, 2);
     }
 
     private void loadLevel(int world, int stage)
