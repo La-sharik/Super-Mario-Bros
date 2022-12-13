@@ -69,9 +69,15 @@ public class PlayerMovement : MonoBehaviour
         if (this.name == "Mario"){ 
             if (Input.GetKeyDown(KeyCode.D)){
                 inputAxis = 1;
+                if (Input.GetKeyDown(KeyCode.A)){
+                    inputAxis = -1;
+                }
             }
             if (Input.GetKeyDown(KeyCode.A)){
                 inputAxis = -1;
+                if (Input.GetKeyDown(KeyCode.D)){
+                    inputAxis = 1;
+                }
             }
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)){
                 inputAxis = 0;

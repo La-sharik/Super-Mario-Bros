@@ -47,8 +47,8 @@ public class GameManager : MonoBehaviour
         coins = 0;
         stars = 0;
         mushrooms = 0;
-
-        loadLevel(1, 1);
+        this.world = SceneManager.GetActiveScene().buildIndex / 3 + 1;
+        this.stage = SceneManager.GetActiveScene().buildIndex % 3;
     }
 
     private void loadLevel(int world, int stage)
