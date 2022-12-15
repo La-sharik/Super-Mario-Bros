@@ -68,7 +68,8 @@ public class GameManager : MonoBehaviour
         this.world = world;
         this.stage = stage;
         if (stage + 1 == 4) {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Game Passed");
+            Invoke(nameof(GamePassed), 3f);
         } else 
         {
             loadLevel(world, stage + 1);
@@ -92,8 +93,15 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        lives = 3;
         SceneManager.LoadScene("Game Over");
-        Invoke(nameof(NewGame), 10f);
+        Invoke(nameof(GamePassed), 3f);
+    }
+
+    private void GamePassed()
+    {
+        lives = 3;
+        SceneManager.LoadScene("Menu");
     }
 
     public void AddCoin()
