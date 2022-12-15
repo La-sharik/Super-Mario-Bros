@@ -106,6 +106,55 @@ MonoBehaviour:
   maxJumpTime: 0.8
   collider: {fileID: 0}
   audioClipJump: {fileID: 0}
+  movement:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 63f0b58c-d776-4afa-8893-7c0f40b2c87c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: c62086f2-1de8-4a32-8d51-489bc005eeea
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 917db3c7-8c41-4492-be27-f4f54db39727
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: down
+      m_Id: a8fb3f2c-11c0-461f-8cb6-f78072af85a9
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 563c368d-2ca1-4fe5-a39c-17abe94e30c7
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 4d1a7601-596a-4c03-b6fd-b5599c0b33d9
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    m_Flags: 0
 --- !u!114 &5229487496396856919
 MonoBehaviour:
   m_ObjectHideFlags: 0

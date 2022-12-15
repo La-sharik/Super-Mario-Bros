@@ -73,7 +73,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smallRenderer: {fileID: 3976163559238416020}
   bigRenderer: {fileID: 7365181450989362163}
-  deathAnimation: {fileID: 0}
 --- !u!70 &1684950887703898139
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -103,8 +102,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  maxJumpHeihgt: 4.2
+  maxJumpHeihgt: 4.5
   maxJumpTime: 0.8
+  collider: {fileID: 0}
+  audioClipJump: {fileID: 0}
+  movement:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2bfe9d4b-b788-4188-a3fa-8a009afb1359
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 537e215d-934c-45e8-9154-a1d0be15f81b
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: up
+      m_Id: f0b62c01-b061-4574-9ab0-43593a096654
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: down
+      m_Id: aa0d69f5-3cf4-4222-a6f3-246f14e1c295
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: left
+      m_Id: a569c0c6-e802-479b-b53e-5dcbbd15f770
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: ee3c6980-15a7-4661-854a-02f35fccbef9
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    m_Flags: 0
 --- !u!114 &5229487496396856919
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject player;
     public AudioClip audioClipJump;
     private AudioSource audioSource;
+    public InputAction movement;
 
     private void Awake()
     {
@@ -29,6 +31,14 @@ public class PlayerMovement : MonoBehaviour
         collider = GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         audioSource = player.GetComponent<AudioSource>();
+        
+        movement.performed += OnMovementPerfomed;
+        movement.canceled += OnMovementPerfomed;
+    }
+
+    private void OnMovementPerfomed(InputAction.CallbackContext context) {
+        var direction = context.ReadValue<Vector2>();
+        inputAxis = direction.x;
     }
 
     public void OnEnable()
@@ -36,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.isKinematic = false;
         collider.enabled = true;
         velocity = Vector2.zero;
-        jumping = false; 
+        jumping = false;
+        movement.Enable();
     }
 
     public void OnDisable()
@@ -45,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         collider.enabled = false;
         velocity = Vector2.zero;
         jumping = false; 
+        movement.Disable();
     }
     
     private void Update()
@@ -71,34 +83,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void HorizontalMovement()
     {
-        if (this.name == "Mario"){ 
-            if (Input.GetKeyDown(KeyCode.D)){
-                inputAxis = 1;
-                if (Input.GetKeyDown(KeyCode.A)){
-                    inputAxis = -1;
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.A)){
-                inputAxis = -1;
-                if (Input.GetKeyDown(KeyCode.D)){
-                    inputAxis = 1;
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)){
-                inputAxis = 0;
-            }
-        }
-        if (this.name == "Luigi"){ 
-            if (Input.GetKeyDown(KeyCode.RightArrow)){
-                inputAxis = 1;
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow)){
-                inputAxis = -1;
-            }
-            if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)){
-                inputAxis = 0;
-            }
-        }
         velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime * 2);
         if(rigidbody.Raycast(Vector2.right * velocity.x))
         {
