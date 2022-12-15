@@ -47,8 +47,13 @@ public class GameManager : MonoBehaviour
         coins = 0;
         stars = 0;
         mushrooms = 0;
-        this.world = SceneManager.GetActiveScene().buildIndex / 3 + 1;
-        this.stage = SceneManager.GetActiveScene().buildIndex % 3;
+        if (SceneManager.GetActiveScene().buildIndex % 3 == 0) {
+            this.world = SceneManager.GetActiveScene().buildIndex / 3;
+            this.stage = 3;
+        } else {
+            this.world = SceneManager.GetActiveScene().buildIndex / 3 + 1;
+            this.stage = SceneManager.GetActiveScene().buildIndex % 3;
+        }
     }
 
     private void loadLevel(int world, int stage)
@@ -59,9 +64,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene($"{world}-{stage}");
     }
 
-    public void NextLevel()
-    {
-        loadLevel(world, stage + 1);
+    public void NextLevel() {
+        this.world = world;
+        this.stage = stage;
+        if (stage + 1 == 4) {
+            SceneManager.LoadScene("Menu");
+        } else 
+        {
+            loadLevel(world, stage + 1);
+        }
     }
 
     public void ResetLevel(float delay)
