@@ -8,11 +8,17 @@ public class FlagPole : MonoBehaviour
     public Transform poleBottom;
     public Transform castle;
     public float speed = 3f;
+    private GameObject player;
+    public AudioClip audioClipFlag;
+    public AudioClip audioClipNextLevel;
+    private AudioSource audioSource;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
-        {
+        {            
+            player = GameObject.FindGameObjectWithTag("Player");
+            audioSource = player.GetComponent<AudioSource>();
             StartCoroutine(MoveTo(flag, poleBottom.position)); //Опускание флага
             StartCoroutine(LevelComlpeteSequence(other.transform));
         }
@@ -21,13 +27,15 @@ public class FlagPole : MonoBehaviour
     private IEnumerator LevelComlpeteSequence(Transform player)
     {
         player.GetComponent<PlayerMovement>().enabled = false;
+        audioSource.PlayOneShot(audioClipFlag);
 
         yield return MoveTo(player, poleBottom.position); //Перемещение к основанию флага
+        audioSource.PlayOneShot(audioClipNextLevel);
         yield return MoveTo(player, player.position + Vector3.right);
         yield return MoveTo(player, player.position + Vector3.right + Vector3.down);
         yield return MoveTo(player, castle.position); //Перемещение к замку
+        yield return new WaitForSeconds(4.5f);
         player.gameObject.SetActive(false);
-        yield return new WaitForSeconds(2f);
         GameManager.Instance.NextLevel();
     }
 
@@ -38,6 +46,7 @@ public class FlagPole : MonoBehaviour
             subject.position = Vector3.MoveTowards(subject.position, destinaton, speed * Time.deltaTime);
             yield return null;
         }
+
         subject.position = destinaton;
     }
 }

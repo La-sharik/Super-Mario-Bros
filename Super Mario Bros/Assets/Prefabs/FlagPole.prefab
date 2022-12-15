@@ -79,6 +79,8 @@ MonoBehaviour:
   poleBottom: {fileID: 395358892561304757}
   castle: {fileID: 0}
   speed: 6
+  audioClipFlag: {fileID: 8300000, guid: e953715bb5f474f2a9fa69691a8c1684, type: 3}
+  audioClipNextLevel: {fileID: 8300000, guid: 1d718f52ca501475b853d14f4d54fe9e, type: 3}
 --- !u!1 &1514653832744613401
 GameObject:
   m_ObjectHideFlags: 0

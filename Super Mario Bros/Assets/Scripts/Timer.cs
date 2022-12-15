@@ -6,11 +6,17 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public float timeStart = 400;
-    public Text timerText;
+    public Text timerText;    
+    private bool musicPlay = false;
+    private GameObject player;
+    public AudioClip audioClip;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = player.GetComponent<AudioSource>();
         timerText.text = timeStart.ToString();
     }
 
@@ -19,5 +25,9 @@ public class Timer : MonoBehaviour
     {
         timeStart -= (Time.deltaTime) * 2;
         timerText.text = Mathf.Round(timeStart).ToString();
+        if(timeStart < 10 && musicPlay == false){
+            audioSource.PlayOneShot(audioClip);
+            musicPlay = true;
+        }
     }
 }

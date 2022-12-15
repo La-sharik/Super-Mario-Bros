@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+    private GameObject player;
+    public AudioClip audioClip;
+    private AudioSource audioSource;
+
     public enum Type
     {
         Coin,
@@ -20,6 +24,7 @@ public class PowerUp : MonoBehaviour
 
     private void Collect(GameObject player) 
     {
+        audioSource = player.GetComponent<AudioSource>();
         switch (type)
         {
             case Type.Coin:
@@ -28,15 +33,18 @@ public class PowerUp : MonoBehaviour
 
             case Type.ExtraLife:
                 GameManager.Instance.AddLives();
+                audioSource.PlayOneShot(audioClip);
                 break;
 
             case Type.Mushrooms:
                 GameManager.Instance.AddMushroom();
+                audioSource.PlayOneShot(audioClip);
                 player.GetComponent<Player>().Grow();
                 break;
 
             case Type.Starpower:
                 GameManager.Instance.AddStar();
+                audioSource.PlayOneShot(audioClip);
                 player.GetComponent<Player>().Starpower();
                 break;
         }

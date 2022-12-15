@@ -18,12 +18,17 @@ public class PlayerMovement : MonoBehaviour
     private float inputAxis;
     private float jumpAxis;
     private Vector2 velocity;
+    private GameObject player;
+    public AudioClip audioClipJump;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         camera = Camera.main;
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = player.GetComponent<AudioSource>();
     }
 
     public void OnEnable()
@@ -135,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
         jumping = velocity.y > 0f;
 
         if (jumpAxis == 1) {
+            audioSource.PlayOneShot(audioClipJump);
             velocity.y = jumpForce;
             jumping = true;
         }

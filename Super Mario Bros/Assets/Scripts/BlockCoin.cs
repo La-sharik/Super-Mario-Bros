@@ -1,11 +1,17 @@
-using System.Collections; 
+using System.Collections;
 using UnityEngine;
 
 public class BlockCoin : MonoBehaviour
 {
+    private GameObject player;
+    public AudioClip audioClip;
+    private AudioSource audioSource;
+
     private void Start()
     {
         GameManager.Instance.AddCoin();
+        player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = player.GetComponent<AudioSource>();
 
         StartCoroutine(Animate());
     }
@@ -15,6 +21,8 @@ public class BlockCoin : MonoBehaviour
         Vector3 restingPosition = transform.localPosition;//начальная позиция блока
         Vector3 animatePosition = restingPosition + Vector3.up * 2.5f;
 
+        audioSource.PlayOneShot(audioClip);
+        
         yield return Move(restingPosition, animatePosition);
         yield return Move(animatePosition, restingPosition);
 
