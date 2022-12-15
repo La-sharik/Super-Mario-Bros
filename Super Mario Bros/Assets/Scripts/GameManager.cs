@@ -47,13 +47,9 @@ public class GameManager : MonoBehaviour
         coins = 0;
         stars = 0;
         mushrooms = 0;
-        if (SceneManager.GetActiveScene().buildIndex % 3 == 0) {
-            this.world = SceneManager.GetActiveScene().buildIndex / 3;
-            this.stage = 3;
-        } else {
-            this.world = SceneManager.GetActiveScene().buildIndex / 3 + 1;
-            this.stage = SceneManager.GetActiveScene().buildIndex % 3;
-        }
+        goomba = 0;
+        koopa = 0;
+        SetScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void loadLevel(int world, int stage)
@@ -63,6 +59,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene($"{world}-{stage}");
     }
+    
     public void Restart() {
         NewGame();
         loadLevel(this.world,this.stage);
@@ -140,5 +137,15 @@ public class GameManager : MonoBehaviour
     public void AddKoopa()
     {
         koopa++;
+    }
+
+    public void SetScene(int scene) {
+         if (scene % 3 == 0) {
+            this.world =scene / 3;
+            this.stage = 3;
+        } else {
+            this.world = scene / 3 + 1;
+            this.stage = scene % 3;
+        }
     }
 }

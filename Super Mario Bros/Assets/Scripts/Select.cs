@@ -8,6 +8,9 @@ public class Select : MonoBehaviour
     public void Scenes(int numberScenes)
     {
         SceneManager.LoadScene(numberScenes);
+        if (GameManager.Instance != null) {
+            GameManager.Instance.SetScene(numberScenes);
+        }
     }
 
     public void Exit()
