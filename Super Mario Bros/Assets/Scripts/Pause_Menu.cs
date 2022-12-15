@@ -35,8 +35,9 @@ public class Pause_Menu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void QuitGame() {
-        GameManager.Instance.NewGame();
+    public void RestartGame() {
+        GameManager.Instance.Restart();
         Time.timeScale = 1f;
+        Resume();
     }
 }

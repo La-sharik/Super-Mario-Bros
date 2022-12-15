@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene($"{world}-{stage}");
     }
+    public void Restart() {
+        NewGame();
+        loadLevel(this.world,this.stage);
+    }
 
     public void NextLevel() {
         this.world = world;

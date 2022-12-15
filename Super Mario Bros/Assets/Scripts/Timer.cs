@@ -30,4 +30,7 @@ public class Timer : MonoBehaviour
             musicPlay = true;
         }
     }
+    public void ResetTime() {
+        timeStart = 400;
+    }
 }
