@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         NewGame();
     }
 
-    private void NewGame()
+    public void NewGame()
     {
         lives = 3;
         coins = 0;
